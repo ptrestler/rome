@@ -288,6 +288,42 @@
       gap: 12px;
       position: relative;
     }
+    .tl-group { margin-bottom: 6px; }
+    .tl-group:last-child { margin-bottom: 0; }
+    .tl-period-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-light);
+      padding: 10px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tl-period-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .tl-group:first-child .tl-period-label { padding-top: 0; }
+
+    .today-jump-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-top: 3px;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      border: none;
+    }
+    .today-jump-btn:active { opacity: 0.8; }
+
     .tl-left {
       width: 68px;
       flex-shrink: 0;
@@ -539,6 +575,7 @@
       <div class="nav-day-num" id="navDayNum"></div>
       <div class="nav-day-date" id="navDayDate"></div>
       <div id="navTodayPill"></div>
+      <div id="navTodayJump"></div>
     </div>
     <button class="nav-btn" id="nextBtn" onclick="goDay(currentDay + 1)">&#8594;</button>
   </div>
@@ -830,8 +867,23 @@ function renderFoodItem(f) {
   `;
 }
 
-function renderTimeline(schedule) {
-  return schedule.map(item => `
+function getTimeOfDay(timeStr) {
+  const t = timeStr.toLowerCase().replace('~', '').trim();
+  if (t === 'afternoon') return 'afternoon';
+  if (t === 'evening') return 'evening';
+  if (t.includes('am')) return 'morning';
+  if (t.includes('pm')) {
+    const m = t.match(/(\d+):/);
+    if (m) {
+      const h = parseInt(m[1]);
+      return (h === 12 || h <= 4) ? 'afternoon' : 'evening';
+    }
+  }
+  return 'morning';
+}
+
+function renderTlItem(item) {
+  return `
     <div class="tl-item">
       <div class="tl-left"><div class="tl-time">${item.time}</div></div>
       <div class="tl-mid"><div class="tl-dot"></div><div class="tl-line"></div></div>
@@ -841,7 +893,23 @@ function renderTimeline(schedule) {
         ${item.map ? mapLink('View on map', item.map, false) : ''}
       </div>
     </div>
-  `).join('');
+  `;
+}
+
+function renderTimeline(schedule) {
+  const PERIODS = ['morning', 'afternoon', 'evening'];
+  const LABELS  = { morning: '🌅 Morning', afternoon: '☀️ Afternoon', evening: '🌙 Evening' };
+  const groups  = { morning: [], afternoon: [], evening: [] };
+  schedule.forEach(item => groups[getTimeOfDay(item.time)].push(item));
+  return PERIODS
+    .filter(p => groups[p].length)
+    .map(p => `
+      <div class="tl-group">
+        <div class="tl-period-label">${LABELS[p]}</div>
+        ${groups[p].map(renderTlItem).join('')}
+      </div>
+    `)
+    .join('');
 }
 
 function renderDay(d) {
@@ -950,6 +1018,7 @@ function renderDay(d) {
 // ── INIT ──
 
 let currentDay = 0;
+let tripDayIdx = -1;
 
 function buildUI() {
   const container = document.getElementById('cardsContainer');
@@ -983,7 +1052,6 @@ function goDay(idx) {
   document.getElementById(`card-${currentDay}`)?.classList.add('active');
   document.getElementById(`dot-${currentDay}`)?.classList.add('active');
 
-  // Scroll dot into view
   const dot = document.getElementById(`dot-${currentDay}`);
   dot?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
 
@@ -994,14 +1062,25 @@ function goDay(idx) {
   document.getElementById('navDayNum').textContent = `Day ${d.day} of ${DAYS.length}`;
   document.getElementById('navDayDate').textContent = d.title;
 
-  // Scroll to top of content
+  const pillEl = document.getElementById('navTodayPill');
+  const jumpEl = document.getElementById('navTodayJump');
+  if (tripDayIdx >= 0) {
+    if (currentDay === tripDayIdx) {
+      pillEl.innerHTML = `<div class="nav-today-pill">📍 Today</div>`;
+      jumpEl.innerHTML = '';
+    } else {
+      pillEl.innerHTML = '';
+      jumpEl.innerHTML = `<button class="today-jump-btn" onclick="goDay(${tripDayIdx})">↩ Back to today</button>`;
+    }
+  }
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function init() {
   buildUI();
 
-  const tripDayIdx = getTripDay();
+  tripDayIdx = getTripDay();
   const today = new Date();
   today.setHours(0,0,0,0);
 
