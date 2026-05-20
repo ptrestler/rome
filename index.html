@@ -560,7 +560,7 @@
 
 <div class="header">
   <h1>&#127981; Roma</h1>
-  <div class="subtitle">Aug 31 – Sep 12, 2026 &nbsp;·&nbsp; 4 Adults &nbsp;·&nbsp; 13 Days</div>
+  <div class="subtitle">Aug 31 – Sep 12, 2026 &nbsp;·&nbsp; 4 Adults &nbsp;·&nbsp; DTW → FCO</div>
   <a href="https://maps.google.com/?q=Via+Calandrelli+6A+00153+Roma+Italy" target="_blank" class="hotel-link">
     🏠 Via Calandrelli, 6A &nbsp;·&nbsp; Trastevere
   </a>
@@ -641,215 +641,225 @@ function food(name, note, mapQuery) {
 
 const DAYS = [
   {
-    day: 1, date: '2026-08-31', label: 'Day 1 · Sunday, August 31',
-    title: 'Arrival in Rome', sub: 'Touch down, settle in, and take that first stroll.',
+    day: 1, date: '2026-08-31', label: 'Day 1 · Monday, August 31',
+    title: 'Arrival in Rome', sub: 'Overnight flight from DTW — touch down, settle in, first stroll.',
     open: false,
-    highlights: ['✈️ Arrival day', '🌙 Trastevere evening'],
+    highlights: ['✈️ Overnight flight from DTW', '🌙 Trastevere evening'],
     schedule: [
-      tl('11:00 AM', 'Arrive at Fiumicino Airport', 'Flight lands — welcome to Rome!', 'Fiumicino Airport Rome'),
-      tl('11:45 AM', 'Clear customs & collect bags', 'Allow 30–45 min for passport control and baggage claim.', ''),
-      tl('12:15 PM', 'Leonardo Express → Roma Termini', '~32 min, €14/person. Buy at the station.', 'Roma Termini Station'),
-      tl('1:00 PM', 'Taxi to Trastevere', '~25 min from Termini to the Airbnb. Easiest with luggage.', 'Via Calandrelli 6A Rome Trastevere'),
-      tl('1:30 PM', 'Check in to Airbnb', 'Settle in, freshen up — long travel day!', ''),
-      tl('3:00 PM', 'Rest & decompress', 'Nap, adjust to the time zone. No agenda.', ''),
-      tl('5:30 PM', 'Evening stroll in Trastevere', 'You\'re already there — wander the cobblestone streets, take it all in.', 'Trastevere Rome'),
-      tl('8:00 PM', 'Dinner', '', ''),
+      tl('Afternoon', '✈️ Arrive at Fiumicino Airport (FCO)', 'Welcome to Rome! Overnight flight from DTW.', 'Fiumicino Airport Rome'),
+      tl('Afternoon', 'Clear customs & collect bags', 'Allow 30–45 min for passport control and baggage claim.', ''),
+      tl('Afternoon', 'Transfer to Trastevere apartment', 'Taxi ~45 min depending on traffic. Easiest option with luggage.', 'Via Calandrelli 6A Trastevere Rome'),
+      tl('Afternoon', 'Check in & decompress', 'Settle in, freshen up — long travel day!', ''),
+      tl('Evening', 'Trastevere neighborhood stroll', 'Decompress, get your bearings. ~1 hour.', 'Trastevere Rome'),
+      tl('Evening', 'Welcome dinner in Trastevere', 'Keep it easy — you\'ll be jet-lagged!', 'Trastevere Rome restaurants'),
     ],
     food: [
       food('Tonnarello', 'Classic Roman trattoria', 'Tonnarello Trastevere Rome'),
       food('Enzo al 29', 'Beloved local spot, book ahead', 'Enzo al 29 Rome'),
     ],
-    transport: '🚄 Leonardo Express: Fiumicino → Termini (~32 min)',
+    transport: '🚕 Taxi from FCO to Trastevere (~45 min)',
   },
   {
-    day: 2, date: '2026-09-01', label: 'Day 2 · Monday, September 1',
-    title: 'Colosseum, Forum & Palatine Hill', sub: 'History nerds, this is YOUR day.',
+    day: 2, date: '2026-09-01', label: 'Day 2 · Tuesday, September 1',
+    title: 'Food Tour & Jewish Ghetto', sub: 'Start the trip with your stomach.',
     open: false,
-    highlights: ['🏛️ Guided tour', '⬇️ Underground access', '🏘️ Monti neighborhood'],
+    highlights: ['🚲 Airbnb Experience', '⭐ 4.84 · 729 reviews', '✡️ Jewish Ghetto'],
     schedule: [
-      tl('8:00 AM', 'Breakfast', '', ''),
-      tl('8:45 AM', 'Head to the Colosseum', 'Meet your guide or gather as a group.', 'Colosseum Rome'),
-      tl('9:00 AM', 'Guided tour — Colosseum, Forum & Palatine', 'Archaeologist-led with underground access. 4–5 hours. Wear comfortable shoes!', 'Roman Forum Rome'),
-      tl('1:00 PM', 'Lunch in Monti', 'Alle Carrette or another spot in the neighborhood.', 'Monti neighborhood Rome'),
-      tl('2:30 PM', 'Explore Monti', 'Rome\'s hippest neighborhood — vintage shops, galleries, great cafés.', 'Monti Rome'),
-    ],
-    food: [
-      food('Alle Carrette', 'Roman pizza in Monti', 'Alle Carrette Rome'),
-    ],
-    transport: '🚇 Metro or walking from the Airbnb',
-    freeTime: {
-      label: 'Afternoon is yours from ~3 PM',
-      items: [
-        { text: 'Circus Maximus', desc: 'A short walk from Monti — the ancient chariot track is free and surprisingly atmospheric.', map: 'Circus Maximus Rome' },
-        { text: 'Aperitivo at Campo de\'Fiori', desc: 'Lively piazza, great for a late afternoon drink before dinner.', map: 'Campo de Fiori Rome' },
-      ],
-    },
-  },
-  {
-    day: 3, date: '2026-09-02', label: 'Day 3 · Tuesday, September 2',
-    title: 'Vatican Day', sub: 'Sunrise entry — beat every crowd.',
-    open: false,
-    highlights: ['🌅 Sunrise entry 7:30 AM', '🎨 Sistine Chapel', '⛪ St. Peter\'s Basilica'],
-    schedule: [
-      tl('6:30 AM', 'Early wake-up & quick breakfast', '', ''),
-      tl('7:00 AM', 'Head to the Vatican', 'Metro or walk.', 'Vatican City Rome'),
-      tl('7:30 AM', 'Early entry — Vatican Museums & Sistine Chapel', 'Beat the crowds entirely. 4–5 hours for the full experience.', 'Vatican Museums Rome'),
-      tl('10:30 AM', 'St. Peter\'s Basilica', 'Free entry. Optionally climb the dome for incredible views.', 'St Peters Basilica Rome'),
-      tl('12:30 PM', 'Lunch near Vatican', '', 'Prati neighborhood Rome'),
-      tl('Afternoon', 'Castel Sant\'Angelo (optional)', 'Hadrian\'s mausoleum turned fortress — gorgeous river views.', 'Castel Sant Angelo Rome'),
-    ],
-    food: [
-      food('Da Teo', 'Beloved Trastevere trattoria', 'Da Teo Rome'),
-      food('Osteria der Belli', 'Charming Trastevere spot', 'Osteria der Belli Rome'),
-    ],
-    transport: '🚇 Metro A → Ottaviano, or walk along the Tiber',
-    freeTime: {
-      label: 'Afternoon free from ~2 PM',
-      items: [
-        { text: 'Stroll the Prati neighborhood', desc: 'Upscale, calm, and right next to the Vatican — great for a coffee and window shopping.', map: 'Prati neighborhood Rome' },
-        { text: 'Walk back along the Tiber', desc: 'Scenic riverside walk back toward Trastevere. Stop at any of the riverside bars.', map: 'Tiber River Rome' },
-        { text: 'Decompress at the Airbnb', desc: 'It\'s a 6 AM start day — an afternoon rest is fully earned.', map: '' },
-      ],
-    },
-  },
-  {
-    day: 4, date: '2026-09-03', label: 'Day 4 · Wednesday, September 3',
-    title: 'Jewish Ghetto & Capitoline', sub: 'Going deeper into Rome\'s layers — perfect for the history buffs.',
-    open: false,
-    highlights: ['🏛️ World\'s oldest public museum', '✡️ Jewish Ghetto', '🎨 Free Caravaggio'],
-    schedule: [
-      tl('9:00 AM', 'Capitoline Museums', '2–3 hours — the She-Wolf of Rome, Dying Gaul, Marcus Aurelius. Terrace views over the Forum!', 'Capitoline Museums Rome'),
-      tl('12:00 PM', 'Walk to the Jewish Ghetto', '~10 min from Capitoline. One of Rome\'s most atmospheric neighborhoods.', 'Jewish Ghetto Rome'),
-      tl('12:30 PM', 'Lunch in the Jewish Ghetto', 'Try carciofi alla giudia — fried artichoke, a local specialty.', 'Jewish Ghetto Rome restaurants'),
-      tl('2:00 PM', 'Ara Pacis', 'Stunning Roman propaganda art in a sleek modern glass museum. ~1 hour.', 'Ara Pacis Rome'),
-      tl('3:30 PM', 'Piazza del Popolo', 'Grand piazza — two nearly identical churches side by side.', 'Piazza del Popolo Rome'),
-      tl('3:45 PM', 'Santa Maria del Popolo', 'Two Caravaggio masterpieces inside — free entry. Don\'t skip this.', 'Santa Maria del Popolo Rome'),
-      tl('Evening', 'Aperitivo', 'Near Piazza del Popolo or Campo de\'Fiori.', 'Campo de Fiori Rome'),
+      tl('9:00 AM', '🚲 Trastevere & Campo de\'Fiori Food Tour', '★4.84 · 729 reviews · $90/person · 3 hours. Starting right in the neighborhood — BOOK ASAP.', 'Campo de Fiori Rome'),
+      tl('12:30 PM', 'Jewish Ghetto walk', '~1 hour. Right next to Trastevere. Try carciofi alla giudia!', 'Jewish Ghetto Rome'),
+      tl('Evening', 'Dinner', '', ''),
     ],
     food: [
       food('Nonna Betta', 'Traditional Roman-Jewish cuisine', 'Nonna Betta Rome'),
       food('Ba\'Ghetto', 'Another great Roman-Jewish spot', 'Ba Ghetto Rome'),
     ],
-    transport: '🚶 Mostly walking today',
-  },
-  {
-    day: 5, date: '2026-09-04', label: 'Day 5 · Thursday, September 4',
-    title: 'Borghese Gallery & Arch of Light ✨', sub: 'Bernini, Caravaggio — and a beam of light through the Pantheon.',
-    open: false,
-    highlights: ['🗿 Borghese Gallery', '☀️ Arch of Light (Sept 4–6!)', '⛲ Piazza Navona', '💦 Trevi Fountain'],
-    schedule: [
-      tl('9:00 AM', 'Head to Borghese Gallery', '', 'Borghese Gallery Rome'),
-      tl('9:00 AM', 'Borghese Gallery', 'Pre-booked timed entry, strictly 2 hours. Bernini sculptures & Caravaggio paintings — one of the world\'s great small museums.', 'Borghese Gallery Rome'),
-      tl('11:00 AM', 'Villa Borghese gardens stroll', 'Beautiful gardens — take your time.', 'Villa Borghese Rome'),
-      tl('1:30 PM', 'Pantheon — ARCH OF LIGHT', 'Sept 4–6 ONLY: a shaft of sunlight pierces the oculus perfectly at noon. Pure magic.', 'Pantheon Rome'),
-      tl('2:30 PM', 'Piazza Navona', 'Bernini\'s Fountain of the Four Rivers. Sit, people-watch.', 'Piazza Navona Rome'),
-      tl('3:30 PM', 'Trevi Fountain', 'Best in the morning or evening for fewer crowds — but worth it anytime.', 'Trevi Fountain Rome'),
-      tl('Evening', 'Dinner in Testaccio', 'Rome\'s food heartland — worth the trip.', 'Testaccio Rome'),
-    ],
-    food: [
-      food('Flavio al Velavevodetto', 'Legendary amatriciana in Testaccio', 'Flavio al Velavevodetto Rome'),
-    ],
-    transport: '🚶 Walk + 🚌 bus to Testaccio',
+    transport: '🚶 Walking day — everything is nearby',
     freeTime: {
-      label: 'Free time ~4–7 PM before dinner',
+      label: 'Afternoon free from ~2 PM',
       items: [
-        { text: 'Spanish Steps & Via Condotti', desc: 'A short walk from Trevi — great for people-watching and window shopping along Rome\'s fanciest street.', map: 'Spanish Steps Rome' },
-        { text: 'Palazzo del Quirinale', desc: 'The Italian presidential palace with a sweeping terrace view over the city rooftops.', map: 'Palazzo del Quirinale Rome' },
+        { text: 'Piazza Farnese', desc: 'Beautiful, uncrowded piazza a short walk from Campo de\'Fiori.', map: 'Piazza Farnese Rome' },
+        { text: 'Aperitivo at Campo de\'Fiori', desc: 'Lively piazza, great for a late afternoon drink before dinner.', map: 'Campo de Fiori Rome' },
       ],
     },
   },
   {
-    day: 6, date: '2026-09-05', label: 'Day 6 · Friday, September 5',
-    title: 'Appian Way & Underground Rome', sub: 'Ancient roads, catacombs, and 3,000 years of layered history.',
+    day: 3, date: '2026-09-02', label: 'Day 3 · Wednesday, September 2',
+    title: 'Colosseum, Forum & Palatine Hill', sub: 'History nerds, this is YOUR day.',
     open: false,
-    highlights: ['🚲 E-bike tour', '💀 Catacombs', '⛪ San Clemente (3 layers!)', '🏛️ Domus Aurea'],
+    highlights: ['🎟️ Guided tour', '⬇️ Underground access', '🏘️ Monti', '⛪ San Clemente'],
     schedule: [
-      tl('9:00 AM', 'Head to Appian Way meeting point', '', 'Via Appia Antica Rome'),
-      tl('9:00 AM', 'Via Appia Antica — e-bike tour + Catacombs', '3–4 hours on ancient Roman roads. The Catacombs of San Callisto or San Sebastiano are extraordinary.', 'Via Appia Antica Rome'),
-      tl('1:00 PM', 'Lunch', '', ''),
-      tl('2:00 PM', 'San Clemente Basilica', '3 complete churches stacked on top of each other — medieval, 4th-century, and 1st-century Roman. ~1 hour.', 'San Clemente Basilica Rome'),
-      tl('3:30 PM', 'Domus Aurea — Nero\'s Golden Palace', 'Advance booking essential. ~1.5 hours. Eerie, beautiful, unforgettable.', 'Domus Aurea Rome'),
-      tl('Evening', 'Dinner in Testaccio', '', 'Testaccio Rome'),
+      tl('9:00 AM', '🎟️ Colosseum / Roman Forum / Palatine Hill', 'Skip-the-line guided tour with underground access. 4–5 hours. Wear comfortable shoes — BOOK NOW.', 'Colosseum Rome'),
+      tl('2:00 PM', 'Monti neighborhood', 'Lunch, coffee, vintage shops. ~2 hours.', 'Monti neighborhood Rome'),
+      tl('4:30 PM', '🌿 San Clemente Basilica', '3 layers of history underground — medieval, 4th-century, and Roman. ~1 hour. No booking needed.', 'San Clemente Basilica Rome'),
+      tl('Evening', 'Dinner', '', ''),
     ],
     food: [
-      food('Felice a Testaccio', 'Cacio e pepe made tableside — the real deal', 'Felice a Testaccio Rome'),
+      food('Alle Carrette', 'Roman pizza in Monti', 'Alle Carrette Rome'),
     ],
-    transport: '🚌 Taxi or bus to Appian Way',
+    transport: '🚇 Metro or walking from the Airbnb',
   },
   {
-    day: 7, date: '2026-09-06', label: 'Day 7 · Saturday, September 6',
+    day: 4, date: '2026-09-03', label: 'Day 4 · Thursday, September 3',
+    title: 'Vatican Day', sub: 'Early entry — beat the crowds entirely.',
+    open: false,
+    highlights: ['🎟️ 7:30 AM entry', '🎨 Sistine Chapel', '⛪ St. Peter\'s Basilica', '🌿 Castel Sant\'Angelo'],
+    schedule: [
+      tl('6:30 AM', 'Early wake-up & quick breakfast', 'It\'s worth it — trust the process.', ''),
+      tl('7:30 AM', '🎟️ Vatican Museums & Sistine Chapel', '7:30am early entry — beat the crowds entirely. 4–5 hours — BOOK NOW.', 'Vatican Museums Rome'),
+      tl('12:30 PM', 'St. Peter\'s Basilica', 'Free entry — security line only. 1–1.5 hours.', 'St Peters Basilica Rome'),
+      tl('2:00 PM', '🌿 Castel Sant\'Angelo', 'Optional — €16/person, ~1–1.5 hours. Only if you have energy!', 'Castel Sant Angelo Rome'),
+      tl('Evening', 'Dinner', '', ''),
+    ],
+    food: [
+      food('Da Teo', 'Beloved Trastevere trattoria', 'Da Teo Rome'),
+      food('Osteria der Belli', 'Charming Trastevere spot', 'Osteria der Belli Rome'),
+    ],
+    transport: '🚇 Metro A → Ottaviano',
+    freeTime: {
+      label: 'Afternoon free if you skip Castel Sant\'Angelo',
+      items: [
+        { text: 'Stroll Prati neighborhood', desc: 'Upscale, calm, right next to the Vatican — great for coffee and window shopping.', map: 'Prati neighborhood Rome' },
+        { text: 'Walk back along the Tiber', desc: 'Scenic riverside walk toward Trastevere. Stop at any riverside bar.', map: 'Tiber River Rome' },
+        { text: 'Decompress at the Airbnb', desc: 'It\'s a 6:30 AM start day — an afternoon rest is fully earned.', map: '' },
+      ],
+    },
+  },
+  {
+    day: 5, date: '2026-09-04', label: 'Day 5 · Friday, September 4',
     title: 'Day Trip to Tivoli 🌿', sub: 'Two UNESCO World Heritage Sites, one stunning day.',
     open: false,
     highlights: ['🏛️ Hadrian\'s Villa', '⛲ Villa d\'Este (500 fountains!)', '🚌 ~1 hr from Rome'],
     schedule: [
-      tl('8:30 AM', 'Train/bus to Tivoli', 'Regional train or Cotral bus from Rome. ~1 hour each way.', 'Tivoli Italy train from Rome'),
-      tl('10:15 AM', 'Hadrian\'s Villa (Villa Adriana)', 'Emperor Hadrian\'s massive country retreat. The Maritime Theatre — an island villa with a moat — is extraordinary. Allow 2–3 hours.', 'Hadrian\'s Villa Tivoli'),
-      tl('12:30 PM', 'Lunch in Tivoli town', 'Charming hilltop setting — picturesque and peaceful.', 'Tivoli town center Italy'),
-      tl('1:45 PM', 'Villa d\'Este', 'Over 500 fountains powered entirely by gravity. The Fountain of the Organ plays music using water pressure. Allow 1.5–2 hours.', 'Villa d\'Este Tivoli'),
-      tl('4:15 PM', 'Bus/train back to Rome', '~1 hour return journey.', 'Tivoli Italy'),
-      tl('7:30 PM', 'Dinner in Rome', 'Try somewhere new tonight!', ''),
+      tl('8:30 AM', 'Train/bus to Tivoli', '~1 hour. €14/person.', 'Tivoli Italy train from Rome'),
+      tl('10:15 AM', '🎟️ Hadrian\'s Villa', 'Emperor Hadrian\'s massive country retreat. 2–3 hours. Book 1–2 weeks ahead.', 'Hadrian\'s Villa Tivoli'),
+      tl('12:30 PM', 'Lunch in Tivoli town', 'Charming hilltop setting.', 'Tivoli Italy restaurants'),
+      tl('1:45 PM', 'Villa d\'Este', '500+ fountains powered entirely by gravity. €15/person. 1.5–2 hours.', 'Villa d\'Este Tivoli'),
+      tl('4:15 PM', 'Return to Rome', '~1 hour.', ''),
+      tl('Evening', 'Dinner in Trastevere', '', 'Trastevere Rome restaurants'),
     ],
     food: [
       food('Lunch in Tivoli town', 'Explore the hilltop restaurants', 'Tivoli Italy restaurants'),
     ],
-    transport: '🚌 Regional train or Cotral bus (€3–5 each way)',
+    transport: '🚌 Regional train or Cotral bus (~1 hr each way, €14/person)',
   },
   {
-    day: 8, date: '2026-09-07', label: 'Day 8 · Sunday, September 7',
-    title: 'Open Day', sub: 'Your day — explore what calls to you.',
-    open: true,
-  },
-  {
-    day: 9, date: '2026-09-08', label: 'Day 9 · Monday, September 8',
-    title: 'Ostia Antica & Testaccio', sub: '"Rome\'s Pompeii" in the morning, Rome\'s food heartland in the afternoon.',
+    day: 6, date: '2026-09-05', label: 'Day 6 · Saturday, September 5',
+    title: 'Borghese Gallery & La Pergola ⭐', sub: 'Bernini and Caravaggio in the morning. Three Michelin stars at night.',
     open: false,
-    highlights: ['🏛️ Ostia Antica', '🎨 Ancient mosaics', '🛒 Testaccio Market'],
+    highlights: ['🎟️ Borghese Gallery', '⭐ La Pergola ★★★ CONFIRMED', '🎨 Free Caravaggio'],
     schedule: [
-      tl('9:00 AM', 'Metro B → Roma-Lido train to Ostia Antica', '~45 min total. Included with Roma Pass!', 'Ostia Antica train station Rome'),
-      tl('10:00 AM', 'Explore Ostia Antica', 'Ancient Roman port city — mosaics, amphitheater, bakeries, apartments. 3–4 hours. The best-preserved Roman city outside Pompeii.', 'Ostia Antica archaeological site'),
-      tl('1:30 PM', 'Light lunch at the park café', 'Inside the archaeological site.', ''),
-      tl('3:00 PM', 'Train back to Rome', '', ''),
-      tl('4:00 PM', 'Testaccio Market', 'Local vendors, street food stalls — the real Rome.', 'Testaccio Market Rome'),
-      tl('4:30 PM', 'Pyramid of Cestius', 'A real Egyptian-style pyramid, built 18–12 BC. Free to see from outside.', 'Pyramid of Cestius Rome'),
-      tl('5:00 PM', 'Protestant Cemetery', 'Where Keats and Shelley are buried — quietly beautiful.', 'Protestant Cemetery Rome'),
-      tl('Evening', 'Dinner in Testaccio', '', 'Testaccio Rome'),
+      tl('9:00 AM', 'Villa Borghese gardens stroll', 'Free — walk off breakfast. ~1 hour.', 'Villa Borghese Rome'),
+      tl('10:00 AM', '🎟️ Borghese Gallery', 'Use Roma Pass. 2 hours max — strictly timed. Bernini & Caravaggio — BOOK NOW (most urgent!).', 'Borghese Gallery Rome'),
+      tl('12:30 PM', 'Piazza del Popolo & Santa Maria del Popolo', '~1 hour. Free Caravaggio paintings inside the church.', 'Piazza del Popolo Rome'),
+      tl('2:00 PM', 'Rest — nap, freshen up, take your time', 'La Pergola is a 3-hour event. Don\'t overdo the afternoon.', ''),
+      tl('8:00 PM', '⭐ La Pergola ★★★ Michelin', 'CONFIRMED — Sept 5 at 8pm. Rome\'s only 3-Michelin-star restaurant. Dress code applies. ~3 hours.', 'La Pergola Rome Hilton Cavalieri'),
     ],
     food: [
-      food('Agustarello', 'Old-school Roman trattoria', 'Agustarello Rome'),
-      food('Flavio al Velavevodetto', 'If you missed it on Day 5!', 'Flavio al Velavevodetto Rome'),
+      food('⭐ La Pergola', '★★★ Michelin — CONFIRMED 8pm · Dress code', 'La Pergola Rome Hilton Cavalieri'),
     ],
-    transport: '🚇 Metro B + Roma-Lido train',
+    transport: '🚇 Metro to Borghese; 🚕 taxi to La Pergola (Hilton Cavalieri)',
   },
   {
-    day: 10, date: '2026-09-09', label: 'Day 10 · Tuesday, September 9',
-    title: 'Open Day', sub: 'Your day — explore what calls to you.',
+    day: 7, date: '2026-09-06', label: 'Day 7 · Sunday, September 6',
+    title: 'Centro Storico & Arch of Light ✨', sub: 'Last chance for the Arch of Light phenomenon — don\'t miss midday.',
+    open: false,
+    highlights: ['💦 Trevi Fountain access', '☀️ Arch of Light LAST DAY', '⛲ Piazza Navona'],
+    schedule: [
+      tl('9:00 AM', 'Trevi Fountain — reserved access', '€3/person. Quiet before the crowds. ~30 min.', 'Trevi Fountain Rome'),
+      tl('12:00 PM', '⭐ Pantheon — Arch of Light!', 'LAST DAY this works (Sept 4–6). A shaft of sunlight pierces the oculus perfectly at midday. Pure magic.', 'Pantheon Rome'),
+      tl('1:30 PM', 'Piazza Navona stroll', 'Bernini\'s Fountain of the Four Rivers. Sit, people-watch. ~30 min.', 'Piazza Navona Rome'),
+      tl('Evening', 'Dinner in Centro Storico', '', 'Campo de Fiori Rome restaurants'),
+    ],
+    food: [
+      food('Explore Centro Storico', 'Lots of great options in the area', 'Campo de Fiori Rome restaurants'),
+    ],
+    transport: '🚶 Walking day in the historic center',
+    freeTime: {
+      label: 'Afternoon free from ~2 PM',
+      items: [
+        { text: 'Spanish Steps & Via Condotti', desc: 'Short walk from Piazza Navona — Rome\'s fanciest street, great for people-watching.', map: 'Spanish Steps Rome' },
+        { text: 'Palazzo del Quirinale', desc: 'The Italian presidential palace with sweeping rooftop views over the city.', map: 'Palazzo del Quirinale Rome' },
+      ],
+    },
+  },
+  {
+    day: 8, date: '2026-09-07', label: 'Day 8 · Monday, September 7',
+    title: 'Capitoline Museums & Domus Aurea', sub: 'Ancient history from hilltop to underground.',
+    open: false,
+    highlights: ['🏛️ World\'s oldest museum', '🏛️ Domus Aurea VR', '🌿 Castel Sant\'Angelo'],
+    schedule: [
+      tl('9:00 AM', '🎟️ Capitoline Museums', 'Use Roma Pass. 2–3 hours. She-Wolf of Rome, Dying Gaul, incredible Forum views.', 'Capitoline Museums Rome'),
+      tl('12:30 PM', 'Lunch', '', ''),
+      tl('2:00 PM', '🎟️ Domus Aurea VR — Nero\'s Golden Palace', '€18/person. ~1.5 hours. Limited availability — BOOK NOW.', 'Domus Aurea Rome'),
+      tl('4:00 PM', '🌿 Castel Sant\'Angelo', 'Optional — only if you skipped it on Day 4. 1–1.5 hours.', 'Castel Sant Angelo Rome'),
+      tl('Evening', 'Dinner near the Ghetto', '', 'Jewish Ghetto Rome restaurants'),
+    ],
+    food: [
+      food('Nonna Betta', 'Roman-Jewish cuisine near the Ghetto', 'Nonna Betta Rome'),
+      food('Ba\'Ghetto', 'Another great option nearby', 'Ba Ghetto Rome'),
+    ],
+    transport: '🚶 Walking + metro',
+  },
+  {
+    day: 9, date: '2026-09-08', label: 'Day 9 · Tuesday, September 8',
+    title: 'Free Day', sub: 'Zero plans — sleep in, wander, find a café, do nothing intentionally.',
     open: true,
+    freeNote: { text: 'If you feel like it: Testaccio Market + Pyramid of Cestius (~1.5 hrs). Open mornings — fun, low-effort, great street food.', map: 'Testaccio Market Rome' },
   },
   {
-    day: 11, date: '2026-09-10', label: 'Day 11 · Wednesday, September 10',
-    title: 'Open Day', sub: 'Your day — explore what calls to you.',
-    open: true,
+    day: 10, date: '2026-09-09', label: 'Day 10 · Wednesday, September 9',
+    title: 'Appian Way E-Bike Tour', sub: 'The highest-rated experience of the whole trip.',
+    open: false,
+    highlights: ['🚲 Airbnb Experience', '⭐ 4.9 · 1,137 reviews', '💀 Catacombs included'],
+    schedule: [
+      tl('Morning', '🌿 Testaccio Market', 'Optional — only if you skipped Day 9. Open mornings, great street food.', 'Testaccio Market Rome'),
+      tl('12:00 PM', '🚲 Appian Way e-bike tour', '★4.9 · 1,137 reviews · $82/person · 4 hours. BOOK ASAP.', 'Via Appia Antica Rome'),
+      tl('On tour', 'Catacombs of San Callisto', '~1 hour, on the Appian Way. ~$10/person.', 'Catacombs of San Callisto Rome'),
+      tl('Evening', 'Rest — big day', '', ''),
+    ],
+    transport: '🚌 Taxi or bus to Appian Way meeting point',
   },
   {
-    day: 12, date: '2026-09-11', label: 'Day 12 · Thursday, September 11',
-    title: 'Open Day', sub: 'Consider making this your farewell dinner night! 🥂',
-    open: true,
-    farewell: true,
+    day: 11, date: '2026-09-10', label: 'Day 11 · Thursday, September 10',
+    title: 'Ostia Antica Day Trip', sub: '"Rome\'s Pompeii" — the best-preserved ancient Roman city.',
+    open: false,
+    highlights: ['🏛️ Ancient port city', '🎨 Roman mosaics & amphitheater', '🚇 ~45 min from Rome'],
+    schedule: [
+      tl('9:00 AM', '🎟️ Ostia Antica day trip', '€22/person. 3–4 hours exploring. Book 1–2 weeks ahead.', 'Ostia Antica archaeological site'),
+      tl('1:30 PM', 'Lunch at the park café', 'Inside the archaeological site.', ''),
+      tl('3:30 PM', 'Return to Rome', '~45 min on the Roma-Lido train.', ''),
+      tl('Evening', 'Easy dinner back in Trastevere', '', 'Trastevere Rome restaurants'),
+    ],
+    food: [
+      food('Back in Trastevere', 'Easy, familiar, home base', 'Trastevere Rome restaurants'),
+    ],
+    transport: '🚇 Metro B + Roma-Lido train (~45 min each way)',
   },
   {
-    day: 13, date: '2026-09-12', label: 'Day 13 · Friday, September 12',
-    title: 'Departure', sub: '9:00 AM flight — early morning!',
+    day: 12, date: '2026-09-11', label: 'Day 12 · Friday, September 11',
+    title: 'Cooking Class & Final Dinner 🥂', sub: 'Together in the morning, split in the afternoon, reunite for the farewell.',
+    open: false,
+    highlights: ['🚲 Cooking class (all)', '👩 Pottery — gals', '👨 Chef Minotti — guys', '🥂 Final dinner'],
+    schedule: [
+      tl('9:00 AM', '🚲 Fettuccine, Ravioli & Tiramisù class', '★5.0 · 18 reviews · $66/person · 3 hours. All four together! Book 1–2 weeks ahead.', 'Trastevere Rome cooking class'),
+      tl('1:00 PM', 'Lunch & split up', '', ''),
+      tl('2:00 PM', '👩 Gals: Pottery in Monteverde', '$101/person · 2 hours. Book 1–2 weeks ahead.', 'Monteverde Rome'),
+      tl('2:00 PM', '👨 Guys: Raw Food Masterclass (Chef Minotti)', '$177/person · 2.5 hours. Book 1–2 weeks ahead.', 'Rome cooking class Chef Minotti'),
+      tl('Evening', '🥂 Final dinner together', 'Last night in Rome — make it a good one!', 'Rome fine dining restaurants'),
+    ],
+    transport: '🚶 Cooking class nearby; 🚕 taxi for afternoon split',
+  },
+  {
+    day: 13, date: '2026-09-12', label: 'Day 13 · Saturday, September 12',
+    title: 'Departure', sub: 'Last espresso. Then arrivederci, Roma.',
     open: false,
     departure: true,
-    highlights: ['⏰ 5:00 AM wake-up', '✈️ 9:00 AM flight'],
+    highlights: ['☕ Last espresso', '✈️ Transfer to FCO'],
     schedule: [
-      tl('5:00 AM', 'Wake up', 'Pack everything the night before — don\'t leave it for the morning!', ''),
-      tl('5:45 AM', 'Head to Roma Termini', '', 'Roma Termini Station'),
-      tl('6:15 AM', 'Leonardo Express to Fiumicino', '~32 min.', 'Fiumicino Airport Rome'),
-      tl('6:50 AM', 'Arrive at airport', 'Check-in & security.', 'Fiumicino Airport Rome'),
-      tl('9:00 AM', '✈️ Flight departs', 'Safe travels — arrivederci, Roma!', ''),
+      tl('Morning', 'Pack up & last espresso', 'Pack the night before if possible!', ''),
+      tl('Departure', '✈️ Transfer to Fiumicino Airport (FCO)', 'Depart September 12. Safe travels!', 'Fiumicino Airport Rome'),
     ],
-    transport: '🚄 Leonardo Express to Fiumicino (~32 min)',
+    transport: '🚄 Leonardo Express or 🚕 taxi to FCO',
   },
 ];
 
@@ -959,6 +969,14 @@ function renderDay(d) {
         <div class="open-day-intro" style="margin-bottom:16px">
           <p>Nothing is planned — choose what appeals to you. Some ideas below:</p>
         </div>
+        ${d.freeNote ? `
+          <div class="freetime-item" style="margin-bottom:16px">
+            <div class="freetime-item-text">
+              <div class="freetime-name">🌿 If you want something low-key</div>
+              <div class="freetime-desc">${d.freeNote.text}</div>
+              ${d.freeNote.map ? `<a href="${mapsUrl(d.freeNote.map)}" target="_blank" class="freetime-map">📍 Map</a>` : ''}
+            </div>
+          </div>` : ''}
         ${suggestionsHTML()}
       </div>
     `;
